@@ -1,0 +1,199 @@
+/*  
+	Theme Name: lobsterpot-forked
+	Theme URI: http://www.cro.ma
+ 	Author URI: http://www.cro.ma
+	Description: forked child theme for Lobster pot
+	Version: 2.0.7
+	Author: LSpeight, Ellsworth AMerican.
+	Author URI: http://www.reachmaine.com
+	License: GNU General Public License
+	License URI: license.txt
+	Template: forked
+*/
+ 
+@import url("../forked/style.css");
+@import url("../forked/public/styles/site.css");
+@import "partials/settings";
+
+ 
+/* =Theme customization starts here */
+.topper img.tllogo {
+	z-index: 0;
+}
+
+.sociallinks {
+	#facebook, #twitter {
+		background-color: $buttonbkgd;
+	}
+}
+
+/* Hiding application text */
+.welcomemsg h4 {
+	display: none;
+}
+
+/* menus */
+#access ul li:hover > a,
+#menu-lower-menu li a:hover // hover on lower menu
+{ // hover on top menu
+	color: $menuhovercolor!important;
+}
+#access a { // scrunch up menu some.
+	padding: 0px 17px;
+} 
+#access .current_page_item > a { // current on top menu
+	//text-decoration: underline;
+	border-bottom: 1px solid $menuActiveborder;
+	color: $menuActivecolor!important;
+}
+#menu-lower-menu li.current_page_item > a { // current on lower menu
+	border-top: 1px solid $menuActiveborder;
+	color: $menuActivecolor!important;
+}
+
+
+#mainmen , // top menu bar
+#menu-lower-menu li a  // menu bar at bottom of slider
+{
+	background-color: $menuBarbkg!important;
+}
+#selectnav1 // mobile ddl for menu
+{
+	background-color: $menuBarbkg!important;
+	color: $menucolor;
+}
+//***************************************************
+// slide show stuff 
+.slidelinkspan a {  // link in slider header
+	font-weight: bold;
+}
+.slidecontentcontents, // outer bkg of slide title
+.slidecontentcontents .cro_slidesinners,  // inner bkg of slide title
+.bannercover .cro_bannerouter, // background of events & specials
+.cro_fpc .fptitles h3, // titles on homepage 'banners'
+.cro_fpc .fpcontents,  // desc of homepage banners
+.cro_headerspace .cro_title, .cro_headerspace .cro_title h1, // page titles
+.cro_headerspace .cro_title h2.cro_accent,  // event titles
+{
+	background-color: $titleBkgd!important;
+}
+//*******************
+// home page banners 
+.cro_backgroundmask, // hover over on  homepage banner info
+{ 
+	background: $baseBkgd;
+}
+.cro_bannermoreinfo, // hover over banners in header {
+.cro_fpc .slidelinkspan // over over on homepage banner link 
+{
+	background: transparent;
+}
+.cro_bannerouter a.cro_bannermoreinfo.cro_accent, // MOre info on banners
+.cro_fpc .slidelinkspan a { // more infor on front page boxes
+
+	color: transparent;
+}
+// home page & 'welcomemsg'
+
+.welcomemsg {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background-image: none!important;
+}
+
+//**** food menu items ******/
+.singlepage {
+	.foodmenu-header {
+		color: $titleFontColor;
+		margin-bottom: 15px;
+	}
+	ul.foodmenu-list {
+		list-style: none;
+	}
+	ul.cro_masthead { // masthead style 
+		background: none;
+		border:0px;
+		margin-bottom: 10px;
+		li.mastheadli {
+			h5.mastheadh {
+				margin-bottom : 5px;
+				font-weight: bold;
+				color: $titleFontColor;
+			}
+		}
+	}
+	ul.cro_mainstay  { // mainstay style 
+		li.mainstayli {
+			background:none;
+			border: 0px;
+			h5.mainstayhead {
+				margin-bottom: 5px;
+				color: $titleFontColor;
+			}
+			p.mainstayp {
+				margin-bottom: 15px;
+			}
+		}
+	}
+
+
+}
+/***************************************/
+/*** sidebar widgets stuff  **/
+.mainwidget {
+		.widget_page_in_widget {
+			h3.widget-title {
+				line-height: 33px;
+			}
+			ol {
+				li {
+					padding: 0px;
+					padding-bottom: 6px;
+				}
+			}
+		}
+}
+
+//******************************* 
+//* footer  & footer widgets *********************
+.footer {
+	//background: none;
+}
+.footer .footinner, .footer .footinner .row  { // footer widgets
+	background-color: $footerwidgetbkgd; // not working??? dont really want red.  
+} 
+
+.footer ul.footwidget {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	li {
+		margin-bottom: 0px;
+	}
+	h3.widget-title {
+		margin-top: 0px;
+		margin-bottom: 0px!important;
+		padding-bottom: 5px!important;
+		font-size: 22px!important;
+
+	}
+	p {
+		color: $footerFontColor;
+	}
+}
+.footer .footscribe { // last footer
+	background-color: $footerbkgd;
+}
+//**************************************
+/*  sidebar widgets */
+.widget_search input#searchsubmit {
+	background-color: $buttonbkgd;
+}
+
+@media only screen and (max-width: 767px) {
+	ul.sociallinks li {
+		float: right;
+	}
+}
+/********** do print styling ************************/
+@import "print";
+/* ********** end theme customizations ************/

@@ -1,0 +1,20 @@
+Template mod notes on Lobster pot/forked
+
+	Home page:
+		page-front.php page template - 
+			copied function _fetch_welcomenote to functions.php 
+				- commented out carousel space holder & post title
+				- run home page through shortcode filter s.t. video shows.
+	
+	Added page template:  page-notitle s.t. we could show a page without the title.
+			used for :  
+	
+	Single.php
+		put title of post in post content (not just on in header).
+	
+	Footer.php
+		changed name at bottom from Croma to Reach.
+
+	inc/shortcodes/shortcode-menu.php
+		make cro_menulist_func() 'pluggable' - i.e. do a 'if not function_exists()' s.t. we can use our own function in
+		functions.php

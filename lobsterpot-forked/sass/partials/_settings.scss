@@ -1,0 +1,56 @@
+/* Colors ---------------------------------------------- */
+// Font Colors
+//  dull blue color from old site:  #A7B2CD 
+$linkcolor: #bf202f; // set in theme options as accent color.
+$titleFontColor: #0C2761;
+$menucolor: #ffffff;
+$menuhovercolor:#B3CCFF; // lighter blue;
+$menuActivecolor:#B3CCFF;
+$menuActiveborder:  #EE394A;// brigher red than link color;
+$pageTitlecolor: #0C2761;
+$footerFontColor: #000000;
+
+// Background colors: 
+$baseBkgd: #0C2761; // 
+$bkgoundContent: #FFFFFF; // 
+$menuBarbkg: #0C2761;  // #0f2451; 
+$titleBkgd: rgba(12,39, 97, 0.4);  //rgba(15, 36, 81, 0.4); //#0f2451;
+$footerbkgd: #0C2761;
+$buttonbkgd: #0c2761; 
+$footerwidgetbkgd: #8FA6D5; // duller lighter blue from logo:  orig: #798bb0;
+
+/* Typography ------------------------------------------ */
+
+/* pieces ------------------------------ */
+h2.post-title,
+h1.page-title {
+	font-family: Arvo, cursive;
+	color: #0C2761;
+	margin-bottom: 10px;
+	font-size: 26px;
+	line-height: 29px;
+}
+.hentry .wp-caption  {
+	width: inherit!important;
+	img {
+		margin-bottom: 0px;
+	}
+	p {
+		font-size: 12px;
+		font-family: Arvo, cursive;
+		text-align: right;
+	}
+}
+.hentry .wp-caption.alignright {
+	float: right;
+}
+.row.singlepage {
+	padding-top: 0px;
+}
+// various button background color.
+.widget_search input#searchsubmit, // search button on sidebar
+form#ctcform input#cro_form_sub, // contact form send button.
+ul.cro_directionscal li input#driveclick  // get direction buttons (no using)
+ {
+	background-color: $buttonbkgd;
+}
