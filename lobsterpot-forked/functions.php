@@ -1,5 +1,5 @@
 <?php
-//require_once(get_stylesheet_directory().'/inc/shortcodes/shortcode-menu.php'); 
+//require_once(get_stylesheet_directory().'/inc/shortcodes/shortcode-menu.php');
 
 add_action( 'wp_print_styles', 'cro_deregister_styles', 100 );
 
@@ -31,16 +31,16 @@ function cro_menulist_func( $atts ) {
     $term = get_term( $no, 'foodmenu');
 
     if ($no >= 1) {
-    	$catargs = array( 
-    		'post_type' => 'menus', 
-    		'numberposts' => -1, 
+    	$catargs = array(
+    		'post_type' => 'menus',
+    		'numberposts' => -1,
     		'foodmenu' => $term->slug
-    	); 
+    	);
     } else {
-    	$catargs = array( 
-    		'post_type' => 'menus', 
-    		'numberposts' => -1, 
-    	);   	
+    	$catargs = array(
+    		'post_type' => 'menus',
+    		'numberposts' => -1,
+    	);
     }
 
     $myposts = get_posts( $catargs );
@@ -49,8 +49,8 @@ function cro_menulist_func( $atts ) {
         case 1:
 
             $op .= '<ul class="cro_mainstay ">';
-    
-    
+
+
             foreach( $myposts as $apost ) : setup_postdata($apost);
                 $fp = get_post_meta( $apost->ID, 'cro_foodprice' , true);
                 $img = get_the_post_thumbnail($apost->ID,'thumbnail');
@@ -71,8 +71,8 @@ function cro_menulist_func( $atts ) {
                 $op .= '</div>';
 
                 $op .= '<div class="clearfix"></div></li>';
-    
-            endforeach; 
+
+            endforeach;
 
             $op .= '</ul>';
 
@@ -81,9 +81,9 @@ function cro_menulist_func( $atts ) {
          case 2:
 
             $pp .= '<ul class="cro_masthead m'   .  $pcat  .    '">';
-            $holdarr = '';
-    
-    
+            $holdarr = [];
+
+
             foreach( $myposts as $apost ) : setup_postdata($apost);
                 $fp = get_post_meta( $apost->ID, 'cro_foodprice' , true);
 
@@ -109,8 +109,8 @@ function cro_menulist_func( $atts ) {
                 $pp .= '</div>';
 
                 $pp .= '<div class="clearfix"></div></li>';
-    
-            endforeach; 
+
+            endforeach;
 
             $pp .= '</ul>';
 
@@ -126,7 +126,7 @@ function cro_menulist_func( $atts ) {
                 $qp = '<div class="displaytopimg i'   .  $pcat  .    '">';
 
 
-                for ($i=1; $i < $crotestnum + 1 ; $i++) { 
+                for ($i=1; $i < $crotestnum + 1 ; $i++) {
                    $qp .= $holdarr[$i - 1]['img'];
                 }
 
@@ -135,7 +135,7 @@ function cro_menulist_func( $atts ) {
 
                 $qp .= '<span class="displaytopimgspan">';
 
-                for ($i=1; $i < $crotestnum + 1 ; $i++) { 
+                for ($i=1; $i < $crotestnum + 1 ; $i++) {
                     if ($i == 1) {
                          $qp .= $holdarr[$i - 1]['titl'];
                     } else {
@@ -152,7 +152,7 @@ function cro_menulist_func( $atts ) {
             if ($countholdarr >= $crotestnum) {
                 $rp = '<div class="displaytopimg i'   .  $pcat  .    '">';
 
-                for ($i=1; $i < $crotestnum + 1 ; $i++) { 
+                for ($i=1; $i < $crotestnum + 1 ; $i++) {
                    $rp .= $holdarr[$countholdarr - $i]['img'];
                 }
 
@@ -160,7 +160,7 @@ function cro_menulist_func( $atts ) {
 
                 $rp .= '<span class="displaytopimgspan">';
 
-                for ($i=1; $i < $crotestnum + 1 ; $i++) { 
+                for ($i=1; $i < $crotestnum + 1 ; $i++) {
                     if ($i == 1) {
                          $rp .= $holdarr[$countholdarr - $i]['titl'];
                     } else {
@@ -178,14 +178,14 @@ function cro_menulist_func( $atts ) {
 
     return $op;
 }
-/**** child theme setup 
- and where to override some theme functions 
+/**** child theme setup
+ and where to override some theme functions
 */
 function zig_theme_setup() {
 	/* replacing a few theme functions */
 	/* menu_shortcode */
 		/* remove_shortcode( 'cro_menu' );  */
-	
+
 		 /* add_shortcode( 'zig_menu', 'cro_menulist_func' );  works but dont need it. */
 
 }
@@ -194,22 +194,22 @@ add_action( 'after_setup_theme', 'zig_theme_setup' );
 
 /**** replace welcome page function on home page  */
 /* changes:
-    - do_shortcode 
+    - do_shortcode
 */
 function zig_fetch_welcomenote($id){
-    
+
     $tlset = get_option( 'tlset' );
-    $bt = get_post($id); 
-    $imgurl = wp_get_attachment_image_src(get_post_thumbnail_id($id),'full', true); 
+    $bt = get_post($id);
+    $imgurl = wp_get_attachment_image_src(get_post_thumbnail_id($id),'full', true);
     $op = /* '<div class="carouselspaceholder" style="height: 40px;">&nbsp;</div> */ '<div class="welcomemsg" ><div class="row">';
-        
+
    /* $op .= '<h3 class="cro_accent">' . $bt->post_title . '</h3>'; */
-    
+
     $op .= '<p class="cro_accent zig">' . do_shortcode( $bt->post_content ) . '</p>';
-    
+
     $op .= '</div></div>';
-    
-    
+
+
     return $op;
 }
 /* image sizes */
@@ -239,11 +239,11 @@ function zig_fetch_welcomenote($id){
     /* add favicons for admin */
     add_action('login_head', 'add_favicon');
     add_action('admin_head', 'add_favicon');
-    
+
     function add_favicon() {
         $favicon_url = get_stylesheet_directory_uri() . '/images/admin-favicon.ico';
         echo '<link rel="shortcut icon" href="' . $favicon_url . '" />';
-    } 
-    /***** end admin favicon *****/ 
+    }
+    /***** end admin favicon *****/
 
 ?>
