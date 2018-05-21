@@ -1,13 +1,176 @@
-@import url("../WooShop/style.css");
 /*  
-	Theme Name: WooShop
-	Theme URI: http://www.dessky.com/
-	Description: WooShop for Cheryl Wixson's Kitchen
+	Theme Name: lobsterpot-forked
+	Theme URI: http://www.cro.ma
+ 	Author URI: http://www.cro.ma
+	Description: forked child theme for Lobster pot
 	Version: 2.0.7
 	Author: LSpeight, Ellsworth AMerican.
-	Author URI: http://www.eaonline.info/
+	Author URI: http://www.reachmaine.com
 	License: GNU General Public License
 	License URI: license.txt
-	asdf
+	Template: forked
 */
+@import url("../forked/style.css");
+@import url("../forked/public/styles/site.css");
+/* Colors ---------------------------------------------- */
+/* Typography ------------------------------------------ */
+/* pieces ------------------------------ */
+h2.post-title,
+h1.page-title {
+  font-family: Arvo, cursive;
+  color: #0C2761;
+  margin-bottom: 10px;
+  font-size: 26px;
+  line-height: 29px; }
+
+.hentry .wp-caption {
+  width: inherit !important; }
+  .hentry .wp-caption img {
+    margin-bottom: 0px; }
+  .hentry .wp-caption p {
+    font-size: 12px;
+    font-family: Arvo, cursive;
+    text-align: right; }
+
+.hentry .wp-caption.alignright {
+  float: right; }
+
+.row.singlepage {
+  padding-top: 0px; }
+
+.widget_search input#searchsubmit,
+form#ctcform input#cro_form_sub,
+ul.cro_directionscal li input#driveclick {
+  background-color: #0c2761; }
+
 /* =Theme customization starts here */
+.topper img.tllogo {
+  z-index: 0; }
+
+.sociallinks #facebook, .sociallinks #twitter {
+  background-color: #0c2761; }
+
+/* Hiding application text */
+.welcomemsg h4 {
+  display: none; }
+
+/* menus */
+#access ul li:hover > a,
+#menu-lower-menu li a:hover {
+  color: #B3CCFF !important; }
+
+#access a {
+  padding: 0px 17px; }
+
+#access .current_page_item > a {
+  border-bottom: 1px solid #EE394A;
+  color: #B3CCFF !important; }
+
+#menu-lower-menu li.current_page_item > a {
+  border-top: 1px solid #EE394A;
+  color: #B3CCFF !important; }
+
+#mainmen,
+#menu-lower-menu li a {
+  background-color: #0C2761 !important; }
+
+#selectnav1 {
+  background-color: #0C2761 !important;
+  color: #ffffff; }
+
+.slidelinkspan a {
+  font-weight: bold; }
+
+.slidecontentcontents,
+.slidecontentcontents .cro_slidesinners,
+.bannercover .cro_bannerouter,
+.cro_fpc .fptitles h3,
+.cro_fpc .fpcontents,
+.cro_headerspace .cro_title, .cro_headerspace .cro_title h1,
+.cro_headerspace .cro_title h2.cro_accent {
+  background-color: rgba(12, 39, 97, 0.4) !important; }
+
+.cro_backgroundmask {
+  background: #0C2761; }
+
+.cro_bannermoreinfo,
+.cro_fpc .slidelinkspan {
+  background: transparent; }
+
+.cro_bannerouter a.cro_bannermoreinfo.cro_accent,
+.cro_fpc .slidelinkspan a {
+  color: transparent; }
+
+.welcomemsg {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-image: none !important; }
+
+.singlepage .foodmenu-header {
+  color: #0C2761;
+  margin-bottom: 15px; }
+.singlepage ul.foodmenu-list {
+  list-style: none; }
+.singlepage ul.cro_masthead {
+  background: none;
+  border: 0px;
+  margin-bottom: 10px; }
+  .singlepage ul.cro_masthead li.mastheadli h5.mastheadh {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #0C2761; }
+.singlepage ul.cro_mainstay li.mainstayli {
+  background: none;
+  border: 0px; }
+  .singlepage ul.cro_mainstay li.mainstayli h5.mainstayhead {
+    margin-bottom: 5px;
+    color: #0C2761; }
+  .singlepage ul.cro_mainstay li.mainstayli p.mainstayp {
+    margin-bottom: 15px; }
+
+/***************************************/
+/*** sidebar widgets stuff  **/
+.mainwidget .widget_page_in_widget h3.widget-title {
+  line-height: 33px; }
+.mainwidget .widget_page_in_widget ol li {
+  padding: 0px;
+  padding-bottom: 6px; }
+
+.footer .footinner, .footer .footinner .row {
+  background-color: #8FA6D5; }
+
+.footer ul.footwidget {
+  margin-top: 0px;
+  margin-bottom: 0px; }
+  .footer ul.footwidget li {
+    margin-bottom: 0px; }
+  .footer ul.footwidget h3.widget-title {
+    margin-top: 0px;
+    margin-bottom: 0px !important;
+    padding-bottom: 5px !important;
+    font-size: 22px !important; }
+  .footer ul.footwidget p {
+    color: #000000; }
+
+.footer .footscribe {
+  background-color: #0C2761; }
+
+/*  sidebar widgets */
+.widget_search input#searchsubmit {
+  background-color: #0c2761; }
+
+@media only screen and (max-width: 767px) {
+  ul.sociallinks li {
+    float: right; } }
+/********** do print styling ************************/
+/* Welcome to Compass. Use this file to define print styles.
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+@media print {
+  #mainmen {
+    display: none;
+    visibility: hidden;
+    height: 0px;
+    margin: 0px;
+    padding: 0px; } }
+/* ********** end theme customizations ************/

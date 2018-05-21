@@ -2,5 +2,9 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
 @media print {
-  li.menu a {
-    display: none; } }
+  #mainmen {
+    display: none;
+    visibility: hidden;
+    height: 0px;
+    margin: 0px;
+    padding: 0px; } }
