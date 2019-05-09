@@ -45,12 +45,7 @@ ul.cro_directionscal li input#driveclick {
 
 /* =Theme customization starts here */
 .topper img.tllogo {
-  z-index: 0;
-  background-color: rgba(255, 255, 255, 0.65);
-  padding-top: 0px;
-  margin-top: 30px;
-  padding-bottom: 0px;
-  border: 1px solid #0c2761; }
+  z-index: 0; }
 
 .sociallinks #facebook, .sociallinks #twitter {
   background-color: #0c2761; }
@@ -137,7 +132,7 @@ ul.cro_directionscal li input#driveclick {
 /*** sidebar widgets stuff  **/
 .mainwidget .widget_page_in_widget h3.widget-title {
   line-height: 33px; }
-.mainwidget .widget_page_in_widget ol li {
+.mainwidget .widget_page_in_widget ol li, .mainwidget .widget_page_in_widget ol.top10list li {
   padding: 0px;
   padding-bottom: 6px; }
 

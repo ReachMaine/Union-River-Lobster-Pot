@@ -1,4 +1,4 @@
-/*  
+/*
 	Theme Name: lobsterpot-forked
 	Theme URI: http://www.cro.ma
  	Author URI: http://www.cro.ma
@@ -10,15 +10,20 @@
 	License URI: license.txt
 	Template: forked
 */
- 
+
 @import url("../forked/style.css");
 @import url("../forked/public/styles/site.css");
 @import "partials/settings";
 
- 
+
 /* =Theme customization starts here */
 .topper img.tllogo {
 	z-index: 0;
+  background-color: rgba(255,255,255,.65);
+  padding-top: 0px;
+  margin-top: 30px;
+  padding-bottom: 0px;
+  border: 1px solid #0c2761;
 }
 
 .sociallinks {
@@ -40,7 +45,7 @@
 }
 #access a { // scrunch up menu some.
 	padding: 0px 17px;
-} 
+}
 #access .current_page_item > a { // current on top menu
 	//text-decoration: underline;
 	border-bottom: 1px solid $menuActiveborder;
@@ -63,7 +68,7 @@
 	color: $menucolor;
 }
 //***************************************************
-// slide show stuff 
+// slide show stuff
 .slidelinkspan a {  // link in slider header
 	font-weight: bold;
 }
@@ -78,13 +83,13 @@
 	background-color: $titleBkgd!important;
 }
 //*******************
-// home page banners 
+// home page banners
 .cro_backgroundmask, // hover over on  homepage banner info
-{ 
+{
 	background: $baseBkgd;
 }
 .cro_bannermoreinfo, // hover over banners in header {
-.cro_fpc .slidelinkspan // over over on homepage banner link 
+.cro_fpc .slidelinkspan // over over on homepage banner link
 {
 	background: transparent;
 }
@@ -110,7 +115,7 @@
 	ul.foodmenu-list {
 		list-style: none;
 	}
-	ul.cro_masthead { // masthead style 
+	ul.cro_masthead { // masthead style
 		background: none;
 		border:0px;
 		margin-bottom: 10px;
@@ -122,7 +127,7 @@
 			}
 		}
 	}
-	ul.cro_mainstay  { // mainstay style 
+	ul.cro_mainstay  { // mainstay style
 		li.mainstayli {
 			background:none;
 			border: 0px;
@@ -154,14 +159,14 @@
 		}
 }
 
-//******************************* 
+//*******************************
 //* footer  & footer widgets *********************
 .footer {
 	//background: none;
 }
 .footer .footinner, .footer .footinner .row  { // footer widgets
-	background-color: $footerwidgetbkgd; // not working??? dont really want red.  
-} 
+	background-color: $footerwidgetbkgd; // not working??? dont really want red.
+}
 
 .footer ul.footwidget {
 	margin-top: 0px;
