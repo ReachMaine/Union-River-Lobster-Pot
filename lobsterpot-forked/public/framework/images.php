@@ -2,20 +2,21 @@
 /**
  * THEME SETTINGS AND EXECUTION FOR THE IMAGES
  * zig:  if post in category, use category as title in header (instead of post title)
+ * 3jun19 zig - add target=blank to altlinks in banners.
  */
 
 /********** Code Index
  *
- * -01- CREATE THE SETTINGS ARRAY FOR THE SLIDESHOW 
+ * -01- CREATE THE SETTINGS ARRAY FOR THE SLIDESHOW
  * -02- SLIDESHOW CODE
  * -03- PAGE HEADER CODE
  */
 
 
 
-/* 
- * -01- CREATE THE SETTINGS ARRAY FOR THE SLIDESHOW 
- * 
+/*
+ * -01- CREATE THE SETTINGS ARRAY FOR THE SLIDESHOW
+ *
  * */
 
 
@@ -40,27 +41,27 @@ function create_slides_javascript() {
 
 
 
-/* 
+/*
  * -02- SLIDESHOW CODE
- * 
+ *
  * */
 
 
 
 
- 
-function cro_fetch_slider() {	
+
+function cro_fetch_slider() {
 	$cro_ctr = 1;
 	$vidframe =  '';
 	$str 		= cro_get_postarray('slideshows');
 	$tlset 		= get_option( 'tlset' );
-	$op 		= '';	
-	
-	
+	$op 		= '';
+
+
 	foreach ($str as $val) {
 		$slidestring	= '';
 		$tturi 			= $returninfo = array();
-		$sideski 		= 'slidecontentcontents';		
+		$sideski 		= 'slidecontentcontents';
 		$timg			= get_the_post_thumbnail( $val, 'full', '');
 		$image_url 		= wp_get_attachment_image_src(get_post_thumbnail_id($val),'sshow', true);
 		$ttype 			= 1;
@@ -82,12 +83,12 @@ function cro_fetch_slider() {
 		if ($timg) {
            $op .= '<div class="imgdiv" style="background: url(' . $image_url[0] . ') no-repeat center top">&nbsp;</div>';
          }
-		
+
 		switch ($ttype) {
-			
-			
+
+
 			// SMALL BANNER
-			case 1:					
+			case 1:
 				if ($tttl || $tttcnt)	{
 					$op .= '<div class="content"><div class="row slidecontents">';
 					$op .= '<div class="slidecontentcontents slidecontentcontentsr cro_animatethis"><div class="cro_slidesinners">';
@@ -99,12 +100,12 @@ function cro_fetch_slider() {
 						$op .= $slidestring;
 					}
 					$op .= '</div></div></div></div>';
-				}		
+				}
 			break;
-			
+
 
 		}
-		
+
 		$op .= '</div>';
 
 		$cro_ctr++;
@@ -113,7 +114,7 @@ function cro_fetch_slider() {
 	if ($op) {
 		 $op .=   '</div></div><div class="bannercover"><div class="row">';
 		if (isset($tlset['cro_showbanindex']) && $tlset['cro_showbanindex'] == 1) {
- 			$op .=  cro_fetch_banner('front');		
+ 			$op .=  cro_fetch_banner('front');
 		} else {
 			$op .= '<div class="six column bannerprocess">&nbsp;</div>';
 		}
@@ -122,15 +123,15 @@ function cro_fetch_slider() {
 		}
 		 return $op . '</div></div></div>'   .  $vidframe;
 	} else {
-		return '<div class="cro_sldr cro_slideinit" style="background: url(' .  get_template_directory_uri()  . '/public/styles/images/slideholder.jpg) no-repeat center top;"><div id="featured" class="ftsl"></div></div>';		
+		return '<div class="cro_sldr cro_slideinit" style="background: url(' .  get_template_directory_uri()  . '/public/styles/images/slideholder.jpg) no-repeat center top;"><div id="featured" class="ftsl"></div></div>';
 	}
 }
 
 
 
-/* 
+/*
 * -03- PAGE HEADER CODE
- * 
+ *
  * */
 
 
@@ -191,10 +192,10 @@ function cro_headerimg($id, $type, $ban){
 
 		$images = get_children( $args );
 
-					
+
 		if ( $images ) {
 			foreach($images as $v){
-				$vals = get_post_meta($v->ID. '_cromadefimg'); 
+				$vals = get_post_meta($v->ID. '_cromadefimg');
 				if (isset($vals['_cromadefimg'][0])) {
 					$vvals = $vals['_cromadefimg'][0];
 				} else {
@@ -203,7 +204,7 @@ function cro_headerimg($id, $type, $ban){
 				if ($vvals == 1) {
 					$image_img_tag = wp_get_attachment_image_src( $v->ID, 'full' );
 					$defimg = $image_img_tag[0];
-				}				
+				}
 			}
 		}
 
@@ -234,10 +235,10 @@ function cro_headerimg($id, $type, $ban){
 
 		$images = get_children( $args );
 
-					
+
 		if ( $images ) {
 			foreach($images as $v){
-				$vals = get_post_meta($v->ID. '_cromadefimg'); 
+				$vals = get_post_meta($v->ID. '_cromadefimg');
 				if (isset($vals['_cromadefimg'][0])) {
 					$vvals = $vals['_cromadefimg'][0];
 				} else {
@@ -246,7 +247,7 @@ function cro_headerimg($id, $type, $ban){
 				if ($vvals == 1) {
 					$image_img_tag = wp_get_attachment_image_src( $v->ID, 'full' );
 					$defimg = $image_img_tag[0];
-				}				
+				}
 			}
 		}
 		$zcat =  get_the_category( $id );
@@ -264,10 +265,10 @@ function cro_headerimg($id, $type, $ban){
 
 		$images = get_children( $args );
 
-					
+
 		if ( $images ) {
 			foreach($images as $v){
-				$vals = get_post_meta($v->ID. '_cromadefimg'); 
+				$vals = get_post_meta($v->ID. '_cromadefimg');
 				if (isset($vals['_cromadefimg'][0])) {
 					$vvals = $vals['_cromadefimg'][0];
 				} else {
@@ -276,12 +277,12 @@ function cro_headerimg($id, $type, $ban){
 				if ($vvals == 1) {
 					$image_img_tag = wp_get_attachment_image_src( $v->ID, 'full' );
 					$defimg = $image_img_tag[0];
-				}				
+				}
 			}
 		}
 
 		$minetitle = '<h2 class="cro_accent zevent">' . get_the_title($id) . '</h2>';
-	} 
+	}
 
 
 	if (!empty($minetitle)){
@@ -301,9 +302,9 @@ function cro_headerimg($id, $type, $ban){
 }
 
 
-/* 
+/*
 * -03- FETCH GALLERY DATA
- * 
+ *
  * */
 
 function get_gallery_data($id, $content){
@@ -322,7 +323,7 @@ function get_gallery_data($id, $content){
 		foreach ( $imgarr as $cro_v ) {
 			$tid = wp_get_attachment_image_src( $cro_v, 'thumbnail');
             $fid = wp_get_attachment_image_src( $cro_v, 'full');
-            $scrp .=  '<li rel="' .  $tid[0]  . '" contents="' . $fid[0]  . '" title="' . get_the_title($cro_v)  . '"></li>'; 
+            $scrp .=  '<li rel="' .  $tid[0]  . '" contents="' . $fid[0]  . '" title="' . get_the_title($cro_v)  . '"></li>';
 		}
 
 	} else {
@@ -331,7 +332,7 @@ function get_gallery_data($id, $content){
     	$images = get_children( array( 'post_parent' => $id , 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) );
         foreach ( $images as $attachment_id => $attachment ) {
             $tid = wp_get_attachment_image_src( $attachment_id, 'thumbnail');
-            $fid = wp_get_attachment_image_src( $attachment_id, 'full');        
+            $fid = wp_get_attachment_image_src( $attachment_id, 'full');
             $scrp .=  '<li rel="' .  $tid[0]  . '" contents="' . $fid[0]  . '" title="' . $attachment->post_title  . '"></li>';
 
         }
@@ -356,7 +357,7 @@ function get_frontcontent() {
 
 	if (!empty($str)) {
 
-	
+
 		// top left content
 		$img = get_the_post_thumbnail( $str[0], 'fc1' );
 		$tttl 	= get_post_meta($str[0], 'cro_imgtitle', true);
@@ -370,7 +371,7 @@ function get_frontcontent() {
 		$slidestring	= ($altlink) ? $altstring : $slidestring;
 		$alter          = ($altlink != '')?  $altlink : get_permalink($sllink) ;
 
-	
+
 		if (!empty($tttl)) {
 			$substring .= '<div class="fptitles"><h3 class="fptitle cro_accent"><a href="' . $alter . '">' . $tttl  . '</a></h3></div>';
 		}
@@ -394,7 +395,7 @@ function get_frontcontent() {
 		$sllink 		= get_post_meta($str[1], 'ss-pagelink', true);
 		$altlink 		= get_post_meta($str[1], 'cro_altlink', true);
 		$slidelabel 	=  __('More Info','localize');
-		$altstring		= '<div class="slidelinkspan"><a href="' . $altlink  . '">' .  $slidelabel  .  '</a></div>';
+		$altstring		= '<div class="slidelinkspan"><a target="_blank" href="' . $altlink  . '">' .  $slidelabel  .  '</a></div>';
 		$slidestring 	= ($sllink && $sllink && $sllink !== 0) ? '<div class="slidelinkspan"><a href="' . get_permalink($sllink)  . '">' .  $slidelabel  .  '</a></div>' : '' ;
 		$slidestring	= ($altlink) ? $altstring : $slidestring;
 		$alter          = ($altlink != '')?  $altlink : get_permalink($sllink) ;
@@ -414,7 +415,7 @@ function get_frontcontent() {
 		$sllink 		= get_post_meta($str[2], 'ss-pagelink', true);
 		$altlink 		= get_post_meta($str[2], 'cro_altlink', true);
 		$slidelabel 	=  __('More Info','localize');
-		$altstring		= '<div class="slidelinkspan"><a href="' . $altlink  . '">' .  $slidelabel  .  '</a></div>';
+		$altstring		= '<div class="slidelinkspan"><a target="_blank" href="' . $altlink  . '">' .  $slidelabel  .  '</a></div>';
 		$slidestring 	= ($sllink && $sllink && $sllink !== 0) ? '<div class="slidelinkspan"><a href="' . get_permalink($sllink)  . '">' .  $slidelabel  .  '</a></div>' : '' ;
 		$slidestring	= ($altlink) ? $altstring : $slidestring;
 		$alter          = ($altlink != '')?  $altlink : get_permalink($sllink) ;
@@ -441,7 +442,7 @@ function get_frontcontent() {
 		$slidestring	= ($altlink) ? $altstring : $slidestring;
 		$alter          = ($altlink != '')?  $altlink : get_permalink($sllink) ;
 
-	
+
 		if (!empty($tttl)) {
 			$substring .= '<div class="fptitles"><h3 class="fptitle cro_accent"><a href="' . $alter . '">' . $tttl  . '</a></h3></div>';
 		}
@@ -476,4 +477,3 @@ function get_frontcontent() {
 	}
 
 }
-
