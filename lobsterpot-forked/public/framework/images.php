@@ -147,13 +147,17 @@ function cro_headerimg($id, $type, $ban){
 		$cbanclass = ' leftmenrow ';
 		$cbanleft = '';
 	} else {
-		$cbanleft = '<div class="six column">&nbsp;</div>';
+		$cbanleft = ''; /* '<div class="six column">&nbsp;</div>'; */
 		$cbanclass = ' rightmenrow ';
 	}
 
 	if ( has_nav_menu('secondnav' ) ) {
 		$cp =  wp_nav_menu( array( 'container_class' => 'secondnav', 'theme_location' => 'secondnav', 'echo' => false ) );
-		$cp = $cbanleft . '<div class="six column ' . $cbanclass  . '">' . $cp  . '</div>';
+		if ($cbanleft == '' ){
+				$cp = '<div class="twelve column ' . $cbanclass  . '">' . $cp  . '</div>';
+		} else {
+			$cp = $cbanleft . '<div class="six column ' . $cbanclass  . '">' . $cp  . '</div>';
+		}
 	} else {
 		$cp = '<div class="six column">&nbsp;</div>';
 	}
