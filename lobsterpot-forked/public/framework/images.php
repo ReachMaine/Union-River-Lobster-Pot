@@ -370,7 +370,7 @@ function get_frontcontent() {
 		$sllink 		= get_post_meta($str[0], 'ss-pagelink', true);
 		$altlink 		= get_post_meta($str[0], 'cro_altlink', true);
 		$slidelabel 	=  __('More Info','localize');
-		$altstring		= '<div class="slidelinkspan"><a href="' . $altlink  . '">' .  $slidelabel  .  '</a></div>';
+		$altstring		= '<div class="slidelinkspan"><a target="_blank" href="' . $altlink  . '">' .  $slidelabel  .  '</a></div>';
 		$slidestring 	= ($sllink && $sllink && $sllink !== 0) ? '<div class="slidelinkspan"><a href="' . get_permalink($sllink)  . '">' .  $slidelabel  .  '</a></div>' : '' ;
 		$slidestring	= ($altlink) ? $altstring : $slidestring;
 		$alter          = ($altlink != '')?  $altlink : get_permalink($sllink) ;
@@ -441,7 +441,7 @@ function get_frontcontent() {
 		$sllink 		= get_post_meta($str[3], 'ss-pagelink', true);
 		$altlink 		= get_post_meta($str[3], 'cro_altlink', true);
 		$slidelabel 	=  __('More Info','localize');
-		$altstring		= '<div class="slidelinkspan"><a href="' . $altlink  . '" rel="1">' .  $slidelabel  .  '</a></div>';
+		$altstring		= '<div class="slidelinkspan"><a target="_blank" href="' . $altlink  . '" rel="1">' .  $slidelabel  .  '</a></div>';
 		$slidestring 	= ($sllink && $sllink && $sllink !== 0) ? '<div class="slidelinkspan"><a href="' . get_permalink($sllink)  . '" rel="1">' .  $slidelabel  .  '</a></div>' : '' ;
 		$slidestring	= ($altlink) ? $altstring : $slidestring;
 		$alter          = ($altlink != '')?  $altlink : get_permalink($sllink) ;
