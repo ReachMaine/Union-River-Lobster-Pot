@@ -1,6 +1,6 @@
 <?php
 //require_once(get_stylesheet_directory().'/inc/shortcodes/shortcode-menu.php');
-
+require_once(get_stylesheet_directory().'/custom/reach_CTAs.php');
 add_action( 'wp_print_styles', 'cro_deregister_styles', 100 );
 
 function cro_deregister_styles() {
